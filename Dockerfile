@@ -15,5 +15,5 @@ RUN cargo build --release --target x86_64-unknown-linux-musl
 
 # Bundle Stage
 FROM gcr.io/distroless/static-debian11:nonroot
-COPY --from=builder /usr/src/loadout.report/target/x86_64-unknown-linux-musl/release/spa-server /
+COPY --from=builder /usr/src/spa-server/target/x86_64-unknown-linux-musl/release/spa-server /
 CMD ["/spa-server"]
