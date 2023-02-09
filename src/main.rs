@@ -54,7 +54,6 @@ fn init_opentelemetry<S>() -> Option<OpenTelemetryLayer<S,Tracer>>
     where
         S : Subscriber + for<'span> LookupSpan<'span>
 {
-    //todo: replace with a better consumer
     let tracer = stdout::new_pipeline().install_simple();
 
     // Create a tracing subscriber with the configured tracer
